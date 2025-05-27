@@ -124,3 +124,16 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .pro{
+    background-image: url("../img/hero.png");
+    background-repeat: no-repeat;
+    min-height: 800px;
+    background-position: left;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.6);
+		background-blend-mode: multiply;
+		z-index: -1;
+  }
+}
