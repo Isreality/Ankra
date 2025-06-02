@@ -11,13 +11,9 @@ export default function Navbar() {
 
   return (
     <div>
-      <div className="top-2 left-4 md:left-60  bg-none md:bg-white flex flex-wrap justify-between px-4 md:px-16 py-6 m-0 z-50 items-center">
+      <div className="top-2 left-4 md:left-60 bg-none md:bg-white flex flex-wrap justify-between px-4 md:px-16 py-6 m-0 z-50 items-center">
         <Image src={Ankra} alt="Ankra" width={90}/>
-        <nav className="hidden justify-items-start gap-10 md:flex lg:flex font-normal">
-          {/* <Link href="/">Dashboard</Link>
-          <Link href="/shop">Shop</Link>
-          <Link href="/tailors">Tailors</Link>
-          <Link href="/contact">Contact</Link> */}
+        <nav className="hidden justify-items-start gap-10 md:flex lg:flex font-medium">
 
       <Link
         href="/"

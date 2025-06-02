@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import Btn from "../components/Btn.jsx";
+import Cad from "../components/Cad.jsx";
 // import { Icon } from '@iconify-icon/react';
 import { Icon } from '@iconify/react';
-
 
 
 export default function Home() {
@@ -16,11 +16,38 @@ export default function Home() {
                 <h2 className="text-white text-center md:text-center lg:text-left font-black text-4xl md:text-6xl lg:text-7xl">
                    GIANT SALE
                 </h2><br/>
-                <h1 className="text-primary text-4xl font-bold">70% OFF</h1>
-                <Link href='/shop' className="bg-primary hover:bg-black lg:w-16 py-6 px-16 rounded-md border-fa cursor-pointer text-white text-xs md:text-base font-medium">Shop Now</Link>
+                <h1 className="text-primary text-2xl md:text-4xl lg:text-5xl font-bold">70% OFF</h1><br/>
+                <div className="flex flex-row gap-5">
+                  <Link href='/shop' className="bg-primary hover:bg-black py-4 px-12 rounded-md border-fa cursor-pointer text-white text-xs md:text-base font-medium">Shop Now</Link>
+                  <Link href='/contact' className="bg-transparent hover:bg-white py-4 px-12 rounded-md border-2 border-white cursor-pointer text-white hover:text-primary text-xs md:text-base font-medium">Get In Touch</Link>
+                </div>
+                
             </div>
         </div>  
 
+        {/* About */}
+        <div className="grid grid-cols-2 items-center w-full px-4 md:px-8 lg:px-24 py-16">
+          <div>
+            <h1 className="text-primary text-center md:text-center lg:text-justify font-black text-xl md:text-2xl lg:text-4xl">About Ankra</h1><br/>
+            <p className="text-left text-sm md:text-base">Established in 2024, our school has been a cornerstone of our community, providing generations of students with a quality education and a solid foundation for their future endeavors.</p><br/>
+            <Link href='/shop' className="bg-primary hover:bg-black py-4 px-10 rounded-md border-fa cursor-pointer text-white text-xs md:text-base font-medium">Shop Now</Link>
+          </div>
+
+          <div>
+
+          </div>
+
+        </div>
+
+        {/* Featured Materials */}
+        <div className="w-full px-4 md:px-8 lg:px-24 py-16">
+          <h1 className="text-[#1e1e1e] text-center md:text-center lg:text-center font-black text-xl md:text-2xl lg:text-4xl">Featured Materials</h1><br/>
+
+          <div className="grid grid-cols-3">
+            <Cad/>
+          </div>
+        </div>
+        
         {/* Services */} 
         <div className="flex flex-row justify-between items-center w-full px-4 md:px-8 lg:px-24 py-16">
           <div className="flex flex-row gap-3">
