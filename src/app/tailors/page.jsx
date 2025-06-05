@@ -1,9 +1,12 @@
-
+import Tab from "../../components/Tab.jsx";
 
 export default function Tailors() {
   return (
     <div>
-      <Tab/>
+      <div className="w-full px-4 md:px-8 lg:px-24 py-16">
+        <Tab/>
+      </div>
+      
     </div>
   )
 }

@@ -1,14 +1,14 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-export default function Tabs() {
+export default function Tab() {
   return (
-    <Tabs defaultValue="account" className="w-[400px]">
-        <TabsList>
-            <TabsTrigger value="account">Account</TabsTrigger>
-            <TabsTrigger value="password">Password</TabsTrigger>
+    <Tabs defaultValue="tailors" className="w-[800px]">
+        <TabsList className="bg-white gap-3 px-2 py-6 border-[#e5e5e5] border-b-3 w-full">
+            <TabsTrigger value="tailors" className="data-[state=active]:border-b-primary data-[state=active]:border-3 p-6">Tailors</TabsTrigger>
+            <TabsTrigger value="appointment" className="data-[state=active]:border-b-primary data-[state=active]:border-3 p-6">Appointments</TabsTrigger>
         </TabsList>
-        <TabsContent value="account">Make changes to your account here.</TabsContent>
-        <TabsContent value="password">Change your password here.</TabsContent>
+        <TabsContent value="tailors">Make changes to your account here.</TabsContent>
+        <TabsContent value="appointment">Change your password here.</TabsContent>
     </Tabs>
   )
 }
