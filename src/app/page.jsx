@@ -41,10 +41,15 @@ export default function Home() {
 
         {/* Featured Materials */}
         <div className="w-full px-4 md:px-8 lg:px-24 py-16">
-          <h1 className="text-[#1e1e1e] text-center md:text-center lg:text-center font-black text-xl md:text-2xl lg:text-4xl">Featured Materials</h1><br/>
+          <h1 className="text-[#1e1e1e] text-center md:text-center lg:text-center font-bold text-xl md:text-2xl lg:text-4xl">Featured Materials</h1><br/>
 
-          <div className="grid grid-cols-3">
-            <Cad/>
+          <div className="grid grid-cols-3 gap-5">
+            <Cad title="Owambe" price="N15,000"/>
+            <Cad title="Owambe" price="N15,000"/>
+            <Cad title="Owambe" price="N15,000"/>
+            <Cad title="Owambe" price="N15,000"/>
+            <Cad title="Owambe" price="N15,000"/>
+            <Cad title="Owambe" price="N15,000"/>
           </div>
         </div>
         
@@ -80,6 +85,7 @@ export default function Home() {
               <p className="text-left text-sm md:text-base">All Cards Accepted</p>
             </div>
           </div>
+
         </div>
         
       </main>

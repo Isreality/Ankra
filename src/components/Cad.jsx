@@ -8,21 +8,21 @@ import {
     CardTitle,
   } from "@/components/ui/card"
 
-export default function Cad() {
+export default function Cad({title, price}) {
   return (
-    <Card>
-        <CardHeader>
-            <CardTitle>Card Title</CardTitle>
-            <CardDescription>Card Description</CardDescription>
-            <CardAction>Card Action</CardAction>
-        </CardHeader>
-        <CardContent>
-            <p>Card Content</p>
-            <div className="bg-[#c4c4c4]"></div>
+    <Card className="py-2 border-1 border-[#f1f1f1] gap-3">
+        <CardContent className="px-2">
+            <div className="bg-[#f1f1f1] w-full h-64 rounded-md"></div>
         </CardContent>
-        <CardFooter>
+        <CardHeader className="px-6 py-4">
+            <CardDescription className="text-black font-medium text-sm md:text-base">{title}</CardDescription>
+            <CardTitle className="text-primary font-bold text-base md:text-xl">{price}</CardTitle>
+            <CardAction>Buy</CardAction>
+        </CardHeader>
+        
+        {/* <CardFooter>
             <p>Card Footer</p>
-        </CardFooter>
+        </CardFooter> */}
     </Card>
   )
 }
