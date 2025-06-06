@@ -7,7 +7,7 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
-  import Btn from "../components/Btn.jsx";
+  import Btn from "../Btn.jsx";
 
 export default function TailorCard({title, location}) {
   return (

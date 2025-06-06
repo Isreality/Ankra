@@ -1,6 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import TailorCard from "../components/TailorCard.jsx";
-import Btn from "../components/Btn.jsx";
+import Tailors from "./Tailors.jsx";
+import Btn from "../Btn.jsx";
 
 export default function Tab() {
   return (
@@ -11,11 +11,7 @@ export default function Tab() {
         </TabsList>
 
         <TabsContent value="tailors">
-          <div className="grid grid-cols-3 gap-3">
-            <TailorCard title="Nike Ore" location="Lagos"/>
-            <TailorCard title="Nike Ore" location="Lagos"/>
-            <TailorCard title="Nike Ore" location="Lagos"/>
-          </div>
+          <div><Tailors/></div>
         </TabsContent>
 
         <TabsContent value="appointment">Change your password here.</TabsContent>
