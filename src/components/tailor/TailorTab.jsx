@@ -5,9 +5,9 @@ import Btn from "../Btn.jsx";
 export default function Tab() {
   return (
     <Tabs defaultValue="tailors" className="w-full">
-        <TabsList className="bg-white gap-0 px-2 py-6 border-[#e5e5e5] border-b-3 text-left">
-            <TabsTrigger value="tailors" className="data-[state=active]:border-b-primary data-[state=active]:border-3 px-8 py-6 cursor-pointer">Tailors</TabsTrigger>
-            <TabsTrigger value="appointment" className="data-[state=active]:border-b-primary data-[state=active]:border-3 px-8 py-6 cursor-pointer">Appointments</TabsTrigger>
+        <TabsList className="bg-white gap-0 px-2 py-6 text-left">
+            <TabsTrigger value="tailors" className="data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:rounded-sm px-8 py-6 cursor-pointer">Tailors</TabsTrigger>
+            <TabsTrigger value="appointment" className="data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:rounded-sm px-8 py-6 cursor-pointer">Appointments</TabsTrigger>
         </TabsList>
 
         <TabsContent value="tailors">

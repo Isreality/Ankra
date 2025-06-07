@@ -27,7 +27,7 @@ function DialogPortal({
 function DialogClose({
   ...props
 }) {
-  return <DialogPrimitive.Close data-slot="dialog-close" {...props} />;
+  return <DialogPrimitive.Close data-slot="dialog-close" {...props} className="bg-[#f1f1f1] cursor-pointer p-4 rounded-full"/>;
 }
 
 function DialogOverlay({
