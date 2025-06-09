@@ -5,11 +5,12 @@ import { Button } from "@/components/ui/button";
 import Btn from "../Btn.jsx";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-// import Nike from "/img/tailor/Nike.jpg";
+import { Label } from "@/components/ui/label"
 import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import {Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter} from "@/components/ui/dialog"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
-import {Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious} from "@/components/ui/pagination"
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious} from "@/components/ui/pagination"
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetFooter, SheetTrigger } from "@/components/ui/sheet"
 import { Icon } from '@iconify/react';
 import { Star, StarOff } from "lucide-react";
 
@@ -52,6 +53,7 @@ export default function Tailors() {
   const [selectedLocation, setSelectedLocation] = useState();
   const [selectedExperience, setSelectedExperience] = useState();
   const [currentPage, setCurrentPage] = useState(1);
+  const [openSheet, setOpenSheet] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRating, setSelectedRating] = useState();
 
@@ -80,9 +82,9 @@ export default function Tailors() {
   );
 
   const clearFilters = () => {
-    setSelectedLocation(undefined);
-    setSelectedExperience(undefined);
-    setSelectedRating(undefined);
+    setSelectedLocation("");
+    setSelectedExperience("");
+    setSelectedRating("");
     // setSearchTerm("");
     setCurrentPage(1);
   };
@@ -161,7 +163,7 @@ export default function Tailors() {
                 </Select>
 
                 {filtersAreActive && (
-                  <Button variant="outline" onClick={clearFilters}>
+                  <Button variant="outline" onClick={clearFilters} className="bg-red-600 text-white">
                     Clear
                   </Button>
                 )}
@@ -179,8 +181,8 @@ export default function Tailors() {
                         <Image
                           src={tailor.image}
                           alt={tailor.name}
-                          width={500}
-                          height={500}
+                          width={800}
+                          height={800}
                           className="w-full h-100 object-cover rounded-md mb-2"
                         />
                     </CardContent>
@@ -243,7 +245,40 @@ export default function Tailors() {
                           </DialogContent>
                         </Dialog>
 
-                        <Btn name="Book" className="bg-black"/>
+                        {/* Book Dialog */}
+                        <Sheet>
+                          <SheetTrigger asChild>
+                            <Button variant="outline" className="bg-primary hover:bg-black lg:w-32 py-6 px-20 rounded-md border-fa  cursor-pointer text-white hover:text-white text-xs md:text-base font-medium">Book</Button>
+                          </SheetTrigger>
+
+                          <SheetContent>
+                            <SheetHeader>
+                              <SheetTitle>Edit profile</SheetTitle>
+                              <SheetDescription>
+                                Make changes to your profile here. Click save when you&apos;re done.
+                              </SheetDescription>
+                            </SheetHeader>
+
+                            <div className="grid flex-1 auto-rows-min gap-6 px-4">
+                              <div className="grid gap-3">
+                                <Label htmlFor="sheet-demo-name">Date</Label>
+                                <Input id="sheet-demo-name" />
+                              </div>
+
+                              <div className="grid gap-3">
+                                <Label htmlFor="sheet-demo-username">Location</Label>
+                                <Input id="sheet-demo-username" />
+                              </div>
+                            </div>
+
+                            <SheetFooter>
+                              <Button type="submit">Book</Button>
+                              {/* <SheetClose asChild>
+                                <Button variant="outline">Close</Button>
+                              </SheetClose> */}
+                            </SheetFooter>
+                          </SheetContent>
+                        </Sheet>
                     </CardFooter>
                 </Card>
             ))}
