@@ -44,12 +44,26 @@ export default function Home() {
           <h1 className="text-[#1e1e1e] text-center md:text-center lg:text-center font-bold text-xl md:text-2xl lg:text-4xl">Featured Materials</h1><br/>
 
           <div className="grid grid-cols-3 gap-5">
-            <Cad title="Owambe" price="N15,000"/>
-            <Cad title="Owambe" price="N15,000"/>
-            <Cad title="Owambe" price="N15,000"/>
-            <Cad title="Owambe" price="N15,000"/>
-            <Cad title="Owambe" price="N15,000"/>
-            <Cad title="Owambe" price="N15,000"/>
+            <Cad title="Owambe" price="N15,000" image="/images/owambe.png"/>
+            <Cad title="Gele" price="N15,000" image="/images/gele.png"/>
+            <Cad title="Ankara Suit" price="N15,000" image="/images/suit.png"/>
+            <Cad title="Senator" price="N15,000" image="/images/demon.png"/>
+            <Cad title="Congo" price="N15,000" image="/images/yel.png"/>
+            <Cad title="Gown" price="N15,000" image="/images/simi.png"/>
+          </div>
+        </div>
+
+        {/* Best Selling */}
+        <div className="w-full px-4 md:px-8 lg:px-24 py-16">
+          <h1 className="text-[#1e1e1e] text-center md:text-center lg:text-center font-bold text-xl md:text-2xl lg:text-4xl">Best Selling</h1><br/>
+
+          <div className="grid grid-cols-3 gap-5">
+            <Cad title="Owambe" price="N15,000" image="/images/eng.png"/>
+            <Cad title="Gele" price="N15,000" image="/images/stud.png"/>
+            <Cad title="Ankara Suit" price="N15,000" image="/images/wt.png"/>
+            <Cad title="Senator" price="N15,000" image="/images/senator.png"/>
+            <Cad title="Congo" price="N15,000" image="/images/mod.png"/>
+            <Cad title="Edo Attire" price="N15,000" image="/images/edo.png"/>
           </div>
         </div>
         

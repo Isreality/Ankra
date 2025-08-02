@@ -48,7 +48,6 @@ const renderStars = (rating) => {
 };
 
 
-
 export default function Tailors() {
   const [selectedLocation, setSelectedLocation] = useState();
   const [selectedExperience, setSelectedExperience] = useState();
@@ -57,13 +56,6 @@ export default function Tailors() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRating, setSelectedRating] = useState();
 
-  // const filteredTailors = tailors.filter((tailor) => {
-  //   const locationMatch = selectedLocation === "All" || tailor.location === selectedLocation;
-  //   const experienceMatch = selectedExperience === "All" || tailor.experience === selectedExperience;
-  //   const ratingMatch = selectedRating === "All" || tailor.rating === selectedRating;
-  //   const searchMatch = tailor.name.toLowerCase().includes(searchTerm.toLowerCase());
-  //   return locationMatch && searchMatch && experienceMatch && ratingMatch;
-  // });
 
   const filteredTailors = tailors.filter((tailor) => {
     const locationMatch = !selectedLocation || tailor.location === selectedLocation;
@@ -90,16 +82,6 @@ export default function Tailors() {
   };
 
   const filtersAreActive = selectedLocation || selectedExperience || selectedRating;
-
-  // const handleLocationChange = (value) => {
-  //   setSelectedLocation(value);
-  //   setCurrentPage(1);
-  // };
-
-  // const handleExperienceChange = (value) => {
-  //   setSelectedExperience(value);
-  //   setCurrentPage(1);
-  // };
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -167,8 +149,6 @@ export default function Tailors() {
                     Clear
                   </Button>
                 )}
-
-
             </div>           
         </div><br/>
 
@@ -245,6 +225,8 @@ export default function Tailors() {
                           </DialogContent>
                         </Dialog>
 
+
+
                         {/* Book Dialog */}
                         <Sheet>
                           <SheetTrigger asChild>
@@ -253,7 +235,7 @@ export default function Tailors() {
 
                           <SheetContent>
                             <SheetHeader>
-                              <SheetTitle>Edit profile</SheetTitle>
+                              <SheetTitle className="text-primary text-2xl font-black">Book Appointment</SheetTitle>
                               <SheetDescription>
                                 Make changes to your profile here. Click save when you&apos;re done.
                               </SheetDescription>
