@@ -29,7 +29,7 @@ export default function Home() {
         <div className="grid grid-cols-2 items-center w-full px-4 md:px-8 lg:px-24 py-16">
           <div>
             <h1 className="text-primary text-center md:text-center lg:text-justify font-black text-xl md:text-2xl lg:text-4xl">About Ankra</h1><br/>
-            <p className="text-left text-sm md:text-base">Established in 2024, our school has been a cornerstone of our community, providing generations of students with a quality education and a solid foundation for their future endeavors.</p><br/>
+            <p className="text-left text-sm md:text-base">It is an app that allows customers to find tailors in their location and book appointments with them get it delivered at their doorstep. It makes everything easy from the measurement to the delivery of the clothing.</p><br/>
             <Link href='/shop' className="bg-primary hover:bg-black py-4 px-10 rounded-md border-fa cursor-pointer text-white text-xs md:text-base font-medium">Shop Now</Link>
           </div>
 

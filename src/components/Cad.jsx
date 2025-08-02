@@ -12,14 +12,14 @@ import {
 
 export default function Cad({title, price, image}) {
   return (
-    <Card className="py-2 border-1 border-[#f1f1f1] gap-3">
+    <Card className="py-2 border-1 border-[#f1f1f1] gap-3 cursor-pointer">
         <CardContent className="px-2">
             <Image
               src={image}
               alt=""
               width={800}
               height={800}
-              className="w-full h-100 object-cover rounded-md mb-2"
+              className="w-full h-100 object-cover rounded-md mb-2 hover:scale-105 overflow-hidden"
             />
         </CardContent>
         <CardHeader className="px-6 py-4">
