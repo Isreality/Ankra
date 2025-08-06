@@ -43,7 +43,7 @@ export default function Home() {
         <div className="w-full px-4 md:px-8 lg:px-24 py-16">
           <h1 className="text-[#1e1e1e] text-center md:text-center lg:text-center font-bold text-xl md:text-2xl lg:text-4xl">Featured Materials</h1><br/>
 
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <Cad title="Owambe" price="N15,000" image="/images/owambe.png"/>
             <Cad title="Gele" price="N15,000" image="/images/gele.png"/>
             <Cad title="Ankara Suit" price="N15,000" image="/images/suit.png"/>
@@ -57,7 +57,7 @@ export default function Home() {
         <div className="w-full px-4 md:px-8 lg:px-24 py-16">
           <h1 className="text-[#1e1e1e] text-center md:text-center lg:text-center font-bold text-xl md:text-2xl lg:text-4xl">Best Selling</h1><br/>
 
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <Cad title="Owambe" price="N15,000" image="/images/eng.png"/>
             <Cad title="Gele" price="N15,000" image="/images/stud.png"/>
             <Cad title="Ankara Suit" price="N15,000" image="/images/wt.png"/>
@@ -68,7 +68,7 @@ export default function Home() {
         </div>
         
         {/* Services */} 
-        <div className="flex flex-row justify-between items-center w-full px-4 md:px-8 lg:px-24 py-16">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full px-2 md:px-8 lg:px-24 py-16">
           <div className="flex flex-row gap-3">
             <div>
               <Icon icon="tabler:truck-delivery" width="65" height="65" className="text-primary font-medium" />

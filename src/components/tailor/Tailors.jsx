@@ -90,7 +90,7 @@ export default function Tailors() {
 
   return (
     <div>
-         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-4">
+         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mt-4">
             
             {/* Search Filter */}
             <Input
@@ -146,7 +146,7 @@ export default function Tailors() {
 
                 {filtersAreActive && (
                   <Button variant="outline" onClick={clearFilters} className="bg-red-600 text-white">
-                    Clear
+                    X
                   </Button>
                 )}
             </div>           
@@ -155,34 +155,22 @@ export default function Tailors() {
         {/* Card */}                
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {paginatedTailors.map((tailor) => (
-                <Card key={tailor.id} className="py-2 border-1 border-[#f1f1f1] gap-0">
+                <Card key={tailor.id} className="py-2 border-1 border-[#f1f1f1] gap-0 cursor-pointer">
                     <CardContent className="px-2">
-                        {/* <div className="bg-[#f1f1f1] w-full h-64 rounded-md"></div> */}
-                        <Image
-                          src={tailor.image}
-                          alt={tailor.name}
-                          width={800}
-                          height={800}
-                          className="w-full h-100 object-cover rounded-md mb-2"
-                        />
-                    </CardContent>
-                    <CardHeader className="px-6 py-4">
-                        <CardDescription className="text-black font-medium text-sm md:text-lg">{tailor.name}</CardDescription>
-                        <div className="flex flex-row items-center">
-                          <Icon icon="carbon:location" width="30" height="30" className="text-primary"/>
-                          <CardTitle className="text-primary font-bold text-base md:text-xl">{tailor.location}</CardTitle>
-                        </div>
-                        {/* <CardAction>Buy</CardAction> */}
-                    </CardHeader>
-                    
-                    <CardFooter className="flex flex-row gap-2 py-2">
+                        
                         {/* View Details Dialog */}
                         <Dialog>
                           <DialogTrigger asChild>
-                            <Button variant="primary" className="bg-black hover:bg-black lg:w-32 py-6 px-20 rounded-md border-fa  cursor-pointer text-white text-xs md:text-base font-medium">View</Button>
+                            <Image
+                              src={tailor.image}
+                              alt={tailor.name}
+                              width={800}
+                              height={800}
+                              className="w-full h-100 object-cover rounded-md mb-2 hover:scale-105 overflow-hidden"
+                            />
                           </DialogTrigger>
 
-                          <DialogContent className="sm:max-w-[900px]">
+                          <DialogContent className="sm:max-w-[900px] md:max-w-[600px] lg:max-w-[900px] ">
                             {/* <DialogHeader>
                               <DialogTitle className="text-primary text-2xl font-black">{tailor.name}</DialogTitle>
                               <DialogDescription>
@@ -190,23 +178,23 @@ export default function Tailors() {
                               </DialogDescription>
                             </DialogHeader> */}
 
-                            <div className="flex flex-row gap-5 space-y-4 items-center">
+                            <div className="flex flex-col md:flex-col lg:flex-row gap-5 space-y-2 md:space-y-4 items-center">
                               {/* Image */}
                               <Image
                                 src={tailor.image}
                                 alt={tailor.name}
                                 width={500}
                                 height={400}
-                                className="rounded-lg w-full h-100 object-cover"
+                                className="rounded-lg w-full h-70 md:h-100 object-cover"
                               />
 
                               {/* Dialog Details */}
-                              <div className="space-y-3 mt-2">
-                                <DialogTitle className="text-primary text-4xl font-black">{tailor.name}</DialogTitle>
+                              <div className="space-y-3 md:space-y-3 mt-2">
+                                <DialogTitle className="text-primary text-2xl md:text-4xl font-black">{tailor.name}</DialogTitle>
                                 <p><span className="font-semibold">Location:</span> {tailor.location}</p>
                                 <p><span className="font-semibold">Experience:</span> {tailor.experience} {tailor.experience === 1 ? "year" : "years"}</p>
                                 
-                                {/* ⭐ Rating */}
+                                {/* Rating */}
                                 <div>
                                   <p className="font-semibold">Rating:</p>
                                   {renderStars(tailor.rating)}
@@ -215,22 +203,34 @@ export default function Tailors() {
                                 <p className="text-black text-sm">
                                   This tailor is known for timely delivery, creativity, and customer satisfaction. Book now to get started on your next outfit!
                                 </p>
-                                <Button variant="primary" className="bg-primary hover:bg-black lg:w-64 py-6 px-20 rounded-md border-fa cursor-pointer text-white text-xs md:text-base font-medium">Book Appointment</Button>
+                                <Button variant="primary" className="bg-primary hover:bg-black w-full md:w-64 py-6 px-20 rounded-md border-fa cursor-pointer text-white text-xs md:text-base font-medium">Book Appointment</Button>
                               </div>
                             </div>
 
-                            {/* <DialogFooter>
-                              <Button variant="primary">Book</Button>
-                            </DialogFooter> */}
                           </DialogContent>
                         </Dialog>
+                    </CardContent>
 
-
+                    <CardHeader className="px-6 py-4">
+                        <CardDescription className="text-black font-medium text-sm md:text-lg">{tailor.name}</CardDescription>
+                        <div className="flex flex-row items-center">
+                          {renderStars(tailor.rating)}
+                          {/* <Icon icon="carbon:location" width="30" height="30" className="text-primary"/>
+                          <CardTitle className="text-primary font-bold text-base md:text-xl">{tailor.location}</CardTitle> */}
+                        </div>
+                        
+                          <div className="flex flex-row items-center">
+                            <Icon icon="carbon:location" width="30" height="30" className="text-primary"/>
+                            <CardAction className="text-primary font-bold text-base md:text-xl">{tailor.location}</CardAction>
+                          </div>
+                    </CardHeader>
+                    
+                    <CardFooter className="py-2">
 
                         {/* Book Dialog */}
                         <Sheet>
                           <SheetTrigger asChild>
-                            <Button variant="outline" className="bg-primary hover:bg-black lg:w-32 py-6 px-20 rounded-md border-fa  cursor-pointer text-white hover:text-white text-xs md:text-base font-medium">Book</Button>
+                            <Button variant="outline" className="bg-primary hover:bg-black w-full py-6 px-20 rounded-md border-fa  cursor-pointer text-white hover:text-white text-xs md:text-base font-medium">Book Appointment</Button>
                           </SheetTrigger>
 
                           <SheetContent>
