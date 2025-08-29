@@ -104,7 +104,7 @@ export default function Tailors() {
             <div className="flex flex-row items-center gap-2">
                 {/* Location Filter */}
                 <Select value={selectedLocation} onValueChange={setSelectedLocation}>
-                    <SelectTrigger className="w-full md:w-full border-1 border-[#f1f1f1] shadow-none">
+                    <SelectTrigger className="w-full md:w-full border-1 border-[#f1f1f1] shadow-none cursor-pointer">
                         <SelectValue placeholder="Location" />
                     </SelectTrigger>
                     <SelectContent>
@@ -118,7 +118,7 @@ export default function Tailors() {
 
                  {/* Experience Filter */}       
                 <Select value={selectedExperience} onValueChange={setSelectedExperience}>
-                    <SelectTrigger className="w-full md:w-full border-1 border-[#f1f1f1] shadow-none">
+                    <SelectTrigger className="w-full md:w-full border-1 border-[#f1f1f1] shadow-none cursor-pointer">
                         <SelectValue placeholder="Experience" />
                     </SelectTrigger>
                     <SelectContent>
@@ -132,7 +132,7 @@ export default function Tailors() {
 
                 {/* Rating Filter */}        
                 <Select value={selectedRating} onValueChange={setSelectedRating}>
-                  <SelectTrigger className="w-full md:w-full border-1 border-[#f1f1f1] shadow-none">
+                  <SelectTrigger className="w-full md:w-full border-1 border-[#f1f1f1] shadow-none cursor-pointer">
                     <SelectValue placeholder="Rating" />
                   </SelectTrigger>
                   <SelectContent>
@@ -145,7 +145,7 @@ export default function Tailors() {
                 </Select>
 
                 {filtersAreActive && (
-                  <Button variant="outline" onClick={clearFilters} className="bg-red-600 text-white">
+                  <Button variant="outline" onClick={clearFilters} className="bg-red-600 text-white cursor-pointer">
                     X
                   </Button>
                 )}
@@ -158,7 +158,7 @@ export default function Tailors() {
                 <Card key={tailor.id} className="py-2 border-1 border-[#f1f1f1] gap-0 cursor-pointer">
                     <CardContent className="px-2">
                         
-                        {/* View Details Dialog */}
+                        {/* View Tailor Details Dialog */}
                         <Dialog>
                           <DialogTrigger asChild>
                             <Image
@@ -203,7 +203,42 @@ export default function Tailors() {
                                 <p className="text-black text-sm">
                                   This tailor is known for timely delivery, creativity, and customer satisfaction. Book now to get started on your next outfit!
                                 </p>
-                                <Button variant="primary" className="bg-primary hover:bg-black w-full md:w-64 py-6 px-20 rounded-md border-fa cursor-pointer text-white text-xs md:text-base font-medium">Book Appointment</Button>
+
+                                <Sheet>
+                                  <SheetTrigger asChild>
+                                    <Button variant="outline" className="bg-primary hover:bg-black w-full py-6 px-20 rounded-md border-fa  cursor-pointer text-white hover:text-white text-xs md:text-base font-medium">Book Appointment</Button>
+                                  </SheetTrigger>
+
+                                  <SheetContent>
+                                    <SheetHeader>
+                                      <SheetTitle className="text-primary text-2xl font-black">Book Appointment</SheetTitle>
+                                      <SheetDescription>
+                                        Schedule a date and book an appointment with {tailor.name}.
+                                      </SheetDescription>
+                                    </SheetHeader>
+
+                                    <div className="grid flex-1 auto-rows-min gap-6 px-4">
+                                      <div className="grid gap-3">
+                                        <Label htmlFor="sheet-demo-name">Date</Label>
+                                        <Input id="sheet-demo-name" />
+                                      </div>
+
+                                      <div className="grid gap-3">
+                                        <Label htmlFor="sheet-demo-username">Location</Label>
+                                        <Input id="sheet-demo-username" />
+                                      </div>
+                                    </div>
+
+                                    <SheetFooter>
+                                      <Button type="submit">Book</Button>
+                                      {/* <SheetClose asChild>
+                                        <Button variant="outline">Close</Button>
+                                      </SheetClose> */}
+                                    </SheetFooter>
+                                  </SheetContent>
+                                </Sheet>
+                                
+                                {/* <Button variant="primary" className="bg-primary hover:bg-black w-full md:w-64 py-6 px-20 rounded-md border-fa cursor-pointer text-white text-xs md:text-base font-medium">Book Appointment</Button> */}
                               </div>
                             </div>
 
@@ -211,18 +246,10 @@ export default function Tailors() {
                         </Dialog>
                     </CardContent>
 
-                    <CardHeader className="px-6 py-4">
+                    <CardHeader className="px-6 py-4 items-center">
                         <CardDescription className="text-black font-medium text-sm md:text-lg">{tailor.name}</CardDescription>
-                        <div className="flex flex-row items-center">
-                          {renderStars(tailor.rating)}
-                          {/* <Icon icon="carbon:location" width="30" height="30" className="text-primary"/>
-                          <CardTitle className="text-primary font-bold text-base md:text-xl">{tailor.location}</CardTitle> */}
-                        </div>
-                        
-                          <div className="flex flex-row items-center">
-                            <Icon icon="carbon:location" width="30" height="30" className="text-primary"/>
-                            <CardAction className="text-primary font-bold text-base md:text-xl">{tailor.location}</CardAction>
-                          </div>
+                        <CardTitle className="text-primary font-bold text-base md:text-xl">{renderStars(tailor.rating)}</CardTitle>
+                        <CardAction className="flex flex-row items-center text-primary font-bold text-base md:text-xl"><Icon icon="carbon:location" width="30" height="30" className="text-primary"/>{tailor.location}</CardAction>
                     </CardHeader>
                     
                     <CardFooter className="py-2">
@@ -237,7 +264,7 @@ export default function Tailors() {
                             <SheetHeader>
                               <SheetTitle className="text-primary text-2xl font-black">Book Appointment</SheetTitle>
                               <SheetDescription>
-                                Make changes to your profile here. Click save when you&apos;re done.
+                                Schedule a date and book an appointment with {tailor.name}.
                               </SheetDescription>
                             </SheetHeader>
 
@@ -255,9 +282,6 @@ export default function Tailors() {
 
                             <SheetFooter>
                               <Button type="submit">Book</Button>
-                              {/* <SheetClose asChild>
-                                <Button variant="outline">Close</Button>
-                              </SheetClose> */}
                             </SheetFooter>
                           </SheetContent>
                         </Sheet>
