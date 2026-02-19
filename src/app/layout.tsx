@@ -23,9 +23,9 @@ export default function RootLayout({
       <body
         className={`${raleway.variable}  antialiased`}
       >
-        <Navbar/>
+        {/* <Navbar/> */}
         {children}
-        <Footer/>
+        {/* <Footer/> */}
       </body>
     </html>
   );

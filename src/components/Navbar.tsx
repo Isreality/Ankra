@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from 'next/navigation';
 import { useState } from "react";
 import Btn from "./Btn";
+import BtnLink from "./BtnLink";
 import { Icon } from '@iconify/react';
 
 export default function Navbar() {
@@ -65,7 +66,7 @@ export default function Navbar() {
                         </Link>
                       </nav>
 
-                      <Btn name="Create account"/>
+                      <BtnLink name="Create account" link="/signup"/>
 
                     </div> 
                   </div>
@@ -117,8 +118,12 @@ export default function Navbar() {
               Contact
             </Link>
           </nav>
-
-          <Btn name="Create account"/>
+          
+          <div className="space-x-2">
+            <BtnLink name="Create Account" link="/signup"/>
+            {/* <Btn name="Sign Up" link="/signup"/> */}
+          </div>
+          
           {/* <Btn name="Create account" className="hidden md:flex lg:flex"/> */}
         </div>
 

@@ -1,12 +1,14 @@
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
 
-interface BtnProps {
+interface BtnLinkProps {
   name: string;
-  // link: any;
+  link: any;
 }
 
-export default function Btn({ name }: BtnProps) {
+export default function Btn({name, link}: BtnLinkProps) {
   return (
-    <Button className="bg-primary hover:bg-black lg:w-32 py-6 px-20 rounded-md border-fa  cursor-pointer text-white text-xs md:text-base font-medium">{name}</Button>
+    <Link href={link} className="bg-white text-primary font-medium border-[1.5] border-primary px-6 py-3 md:px-6 md:py-4 rounded-lg">
+        {name}
+    </Link>
   )
 }

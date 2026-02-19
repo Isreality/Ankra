@@ -7,10 +7,10 @@ export default function Footer() {
   return (
     <div>
         <div className="bg-black grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 py-16 px-4 md:px-8 lg:px-24 gap-10">
-                <div className="grid justify-items-start">
+                <div className="grid justify-items-start gap-5">
                     <Image src="/images/Ankra.png" alt="Ankra" width={90} height={90}/>
                     
-                    <p className="text-white text-left text-sm md:text-base font-normal ">Established in 2024, our school has been a cornerstone of our community, providing generations of students with a quality education and a solid foundation for their future endeavors.</p>
+                    <p className="text-white text-left text-sm md:text-base font-normal ">It is an app that allows customers to find tailors in their location and book appointments with them get it delivered at their doorstep. It makes everything easy from the measurement to the delivery of the clothing.</p>
                 </div>
 
                 <div className="">

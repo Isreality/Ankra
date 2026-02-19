@@ -1,7 +1,16 @@
+import Footer from "@/components/Footer"
+import Navbar from "@/components/Navbar"
 
 
 export default function Contact() {
   return (
-    <div>Contact</div>
+    <div>
+      <main>
+        <Navbar/>
+        <div>Contact</div>
+        <Footer/>
+      </main>
+    </div>
+    
   )
 }
