@@ -30,10 +30,11 @@ const tailors = [
 
 const categories = ["Abia", "Abuja", "Delta", "Edo", "Lagos", "Ogun", "Osun", "Kaduna", "Kano"];
 const exp = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const ratings = [1, 2, 3, 4, 5];
+const ratings = ["All", 1, 2, 3, 4, 5];
 const ITEMS_PER_PAGE = 6;
 
-const renderStars = (rating) => {
+
+const renderStars = (rating:number) => {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
     stars.push(
@@ -49,12 +50,12 @@ const renderStars = (rating) => {
 
 
 export default function Tailors() {
-  const [selectedLocation, setSelectedLocation] = useState();
-  const [selectedExperience, setSelectedExperience] = useState();
+  const [selectedLocation, setSelectedLocation] = useState<string | undefined>(undefined); 
+  const [selectedExperience, setSelectedExperience] = useState<string | undefined>(undefined); 
   const [currentPage, setCurrentPage] = useState(1);
   const [openSheet, setOpenSheet] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedRating, setSelectedRating] = useState();
+  const [selectedRating, setSelectedRating] = useState<string | undefined>(undefined); 
 
 
   const filteredTailors = tailors.filter((tailor) => {
@@ -83,7 +84,7 @@ export default function Tailors() {
 
   const filtersAreActive = selectedLocation || selectedExperience || selectedRating;
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e:any) => {
     setSearchTerm(e.target.value);
     setCurrentPage(1);
   };
@@ -103,7 +104,7 @@ export default function Tailors() {
             {/* Dropdown Filters */}
             <div className="flex flex-row items-center gap-2">
                 {/* Location Filter */}
-                <Select value={selectedLocation} onValueChange={setSelectedLocation}>
+                <Select value={selectedLocation ?? ""} onValueChange={setSelectedLocation}>
                     <SelectTrigger className="w-full md:w-full border-1 border-[#f1f1f1] shadow-none cursor-pointer">
                         <SelectValue placeholder="Location" />
                     </SelectTrigger>
@@ -117,13 +118,13 @@ export default function Tailors() {
                 </Select>
 
                  {/* Experience Filter */}       
-                <Select value={selectedExperience} onValueChange={setSelectedExperience}>
+                <Select value={selectedExperience ?? ""} onValueChange={setSelectedExperience}>
                     <SelectTrigger className="w-full md:w-full border-1 border-[#f1f1f1] shadow-none cursor-pointer">
                         <SelectValue placeholder="Experience" />
                     </SelectTrigger>
                     <SelectContent>
                         {exp.map((ex) => (
-                        <SelectItem key={ex} value={ex}>
+                        <SelectItem key={ex} value={ex.toString()}>
                             {ex}
                         </SelectItem>
                         ))}
@@ -131,16 +132,27 @@ export default function Tailors() {
                 </Select>
 
                 {/* Rating Filter */}        
-                <Select value={selectedRating} onValueChange={setSelectedRating}>
+                <Select value={selectedRating ?? ""} onValueChange={setSelectedRating}>
                   <SelectTrigger className="w-full md:w-full border-1 border-[#f1f1f1] shadow-none cursor-pointer">
                     <SelectValue placeholder="Rating" />
                   </SelectTrigger>
                   <SelectContent>
-                    {ratings.map((r) => (
-                      <SelectItem key={r} value={r}>
-                        {r === "All" ? "All" : `${r} star${r > 1 ? "s" : ""}`}
+                    {ratings.map((r) => {
+                      // Determine the string value and display label safely
+                      const value = r.toString();
+                      const label = r === "All" ? "All" : `${r} star${Number(r) > 1 ? "s" : ""}`;
+
+                      return (
+                        <SelectItem key={value} value={value}>
+                          {label}
+                        </SelectItem>
+                      );
+                    })}
+                    {/* {ratings.map((r) => (
+                      <SelectItem key={r} value={r.toString()}>
+                        {r === "All" ? "All" : `${r} star${Number(r) > 1 ? "s" : ""}`}
                       </SelectItem>
-                    ))}
+                    ))} */}
                   </SelectContent>
                 </Select>
 
@@ -318,7 +330,7 @@ export default function Tailors() {
           <Pagination>
             <PaginationContent className="cursor-pointer gap-2">
               <PaginationItem>
-                <PaginationPrevious onClick={() => setCurrentPage((p) => Math.max(1, p - 1))} disabled={currentPage === 1} className="cursor-pointer"/>
+                <PaginationPrevious onClick={() => setCurrentPage((p) => Math.max(1, p - 1))} aria-disabled={currentPage === 1} className="cursor-pointer"/>
               </PaginationItem>
 
               <PaginationItem>
@@ -337,7 +349,7 @@ export default function Tailors() {
               </PaginationItem>
 
               <PaginationItem>
-                <PaginationNext onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages} className="cursor-pointer" />
+                <PaginationNext onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))} aria-disabled={currentPage === totalPages} className="cursor-pointer" />
               </PaginationItem>
             </PaginationContent>
           </Pagination>

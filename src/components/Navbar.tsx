@@ -77,7 +77,7 @@ export default function Navbar() {
 
 
       {/* Tab & desktop */}
-      <div className="hidden md:hidden lg:flex lg:flex-wrap top-2 left-4 md:left-60 bg-none md:bg-white justify-between border-b-primary border-1 lg:px-24 md:px-8 py-6 m-0 z-50 items-center">
+      <div className="hidden md:hidden lg:flex lg:flex-wrap top-2 left-4 md:left-60 bg-none md:bg-white justify-between border-b-primary border-1 lg:px-24 md:px-8 py-10 m-0 z-50 items-center">
         <div className="hidden md:hidden lg:flex">
           <Image src="/images/Ankra.png" alt="Ankra" width={90} height={90}/>
         </div>

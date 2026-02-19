@@ -7,9 +7,14 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
-  import Btn from "../Btn.jsx";
+import Btn from "../Btn.jsx";
 
-export default function TailorCard({title, location}) {
+interface TailorCardProps {
+  title: string;
+  location: any;
+}
+
+export default function TailorCard({title, location}: TailorCardProps) {
   return (
     <Card className="py-2 border-1 border-[#f1f1f1] gap-0">
         <CardContent className="px-2">
@@ -23,7 +28,7 @@ export default function TailorCard({title, location}) {
         
         <CardFooter className="flex flex-row gap-2 py-2">
             <Btn name="View"/>
-            <Btn name="Book" className="bg-black"/>
+            <Btn name="Book"/>
         </CardFooter>
     </Card>
   )

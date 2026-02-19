@@ -1,14 +1,14 @@
 import Link from "next/link";
 
-interface BtnLinkProps {
+interface BtnProps {
   name: string;
-  link: any;
+  // link: any;
 }
 
-export default function Btn({name, link}: BtnLinkProps) {
+export default function Btn({name}: BtnProps) {
   return (
-    <Link href={link} className="bg-white text-primary font-medium border-[1.5] border-primary px-6 py-3 md:px-6 md:py-4 rounded-lg">
+    <div className="bg-white text-primary font-medium border-[1.5] border-primary px-6 py-3 md:px-6 md:py-4 rounded-lg">
         {name}
-    </Link>
+    </div>
   )
 }
