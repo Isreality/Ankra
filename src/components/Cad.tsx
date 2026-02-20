@@ -29,8 +29,8 @@ export default function Cad({title, price, image}: CadProps) {
             />
         </CardContent>
         <CardHeader className="px-6 pt-2 pb-4">
-            <CardDescription className="text-black font-semibold text-sm md:text-lg">{title}</CardDescription>
-            <CardTitle className="text-primary font-bold text-base md:text-2xl">{price}</CardTitle>
+            <CardDescription className="text-black font-semibold text-lg md:text-2xl lg:text-xl">{title}</CardDescription>
+            <CardTitle className="text-primary font-bold text-xl md:text-3xl lg:text-2xl">{price}</CardTitle>
             <CardAction><Icon icon="mdi:cart-variant" width="45" height="45" className="bg-primary text-white p-2 rounded-full font-medium"/></CardAction>
         </CardHeader>
         

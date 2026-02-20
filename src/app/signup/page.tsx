@@ -15,33 +15,80 @@ export default function Signup() {
 
   return (
     <div>
-      <div className='flex flex-col md:flex-col lg:flex-row items-center justify-between gap-10 w-full pl-20 pr-0'>
+      <div className='flex flex-col md:flex-col lg:flex-row items-center justify-between gap-10 w-full px-1 md:pl-20 md:pr-0'>
         {/* <div className='  pl-20 pr-0 '> */}
         {/* LHS */}
           <div className='space-y-4 w-[80%] sm:m-12 lg:m-0 items-center rounded-lg'>
 
-            <h1 className='text-primary text-left text-4xl md:text-5xl font-black mb-0 md:mb-2'>Sign Up</h1><br/>
+            <h1 className='text-primary text-left text-2xl md:text-4xl font-bold mb-0 md:mb-2 mt-6 md:mt-0'>Sign Up</h1><br/>
             
             {/* LHS */}
             <form  className='grid justify-items-stretch text-left'>
-              {/* Email */}
-              <div className='items-start'>
-                <label htmlFor="email" className='text-md md:text-lg text-left'>Email</label><br/>
-                <input 
-                  className='border p-4 w-80 md:w-full rounded-md border-fa bg-fa focus:outline-primary focus:bg-fa' 
-                  type='email' 
-                  id = "email" 
-                  placeholder='example@gmail.com'
-                  // value={email}
-                  // onChange={(e) => setEmail(e.target.value)}
-                  />
+
+              {/* Name & User Name */}
+              <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-5'>
+                {/* Name */}
+                <div className=''>
+                  <label htmlFor="email" className='text-sm md:text-base text-left'>Name</label><br/>
+                  <input 
+                    className='border p-4 w-full text-sm md:text-base rounded-md border-fa bg-fa focus:outline-primary focus:bg-fa' 
+                    type='name' 
+                    id = "name" 
+                    placeholder='Enter your full name'
+                    // value={name}
+                    // onChange={(e) => setName(e.target.value)}
+                    />
+                </div>
+
+                {/* User Name */}
+                <div className=''>
+                  <label htmlFor="user" className='text-sm md:text-base text-left'>User Name</label><br/>
+                  <input 
+                    className='border p-4 w-full text-sm md:text-base rounded-md border-fa bg-fa focus:outline-primary focus:bg-fa' 
+                    type='name' 
+                    id = "name" 
+                    placeholder='Enter username'
+                    // value={user}
+                    // onChange={(e) => setUserName(e.target.value)}
+                    />
+                </div>
               </div><br/>
+
+              {/* Email & Phone */}
+              <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-5'>
+                {/* Email */}
+                <div className=''>
+                  <label htmlFor="email" className='text-sm md:text-base text-left'>Email</label><br/>
+                  <input 
+                    className='border p-4 w-full text-sm md:text-base rounded-md border-fa bg-fa focus:outline-primary focus:bg-fa' 
+                    type='email' 
+                    id = "email" 
+                    placeholder='example@gmail.com'
+                    // value={email}
+                    // onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+
+                {/* Phone */}
+                <div className=''>
+                  <label htmlFor="phone" className='text-sm md:text-base text-left'>Phone</label><br/>
+                  <input 
+                    className='border p-4 w-full text-sm md:text-base rounded-md border-fa bg-fa focus:outline-primary focus:bg-fa' 
+                    type='phone' 
+                    id = "phone" 
+                    placeholder='Enter phone number'
+                    // value={phone}
+                    // onChange={(e) => setPhone(e.target.value)}
+                    />
+                </div>
+              </div><br/>
+              
               
               {/* Password */}
               <div className='space-y-5' style={{ position: 'relative' }}>
-                <label htmlFor="pwd" className='text-md md:text-lg text-left mb-8'>Password</label><br/>
+                <label htmlFor="pwd" className='text-sm md:text-base text-left mb-8'>Password</label><br/>
                 <input 
-                  className='border p-4 w-80 md:w-full rounded-md border-fa bg-fa focus:bg-fa focus:outline-primary' 
+                  className='border p-4 w-full text-sm md:text-base rounded-md border-fa bg-fa focus:bg-fa focus:outline-primary' 
                   // type= {showPassword ? 'text' : 'password'}
                   id = "pwd" 
                   placeholder='Enter your password'
@@ -52,9 +99,9 @@ export default function Signup() {
 
               {/* Confirm Password */}
               <div className='space-y-5' style={{ position: 'relative' }}>
-                <label htmlFor="pwd" className='text-md md:text-lg text-left mb-8'>Confirm Password</label><br/>
+                <label htmlFor="pwd" className='text-sm md:text-base text-left mb-8'>Confirm Password</label><br/>
                 <input 
-                  className='border p-4 w-80 md:w-full rounded-md border-fa bg-fa focus:bg-fa focus:outline-primary' 
+                  className='border p-4 w-full text-sm md:text-base rounded-md border-fa bg-fa focus:bg-fa focus:outline-primary' 
                   // type= {showPassword ? 'text' : 'password'}
                   id = "pwd" 
                   placeholder='Enter your password'
@@ -66,16 +113,16 @@ export default function Signup() {
               {/* <button type="submit" className=' mt-2 py-4 px-20 md:px-64 rounded-lg border-fa bg-primary hover:bg-black cursor-pointer text-white text-xl text-center font-bold'>
                 Sign In
               </button> */}
-              <button type="submit" className='border-fa bg-primary hover:bg-black py-4 rounded-lg cursor-pointer text-white text-xl text-center font-bold'>
+              <button type="submit" className='border-fa bg-primary hover:bg-black py-4 rounded-lg cursor-pointer text-white text-base md:text-xl text-center font-bold'>
                 Sign Up
               </button>
             </form>
 
-            <p className='text-lg text-center'>Already have an account? <Link href="/login" className='font-bold text-primary'>Sign In</Link></p>
+            <p className='text-sm md:text-base text-center'>Already have an account? <Link href="/login" className='font-bold text-primary text-sm md:text-base'>Sign In</Link></p>
           </div>
           
           {/* Image */}
-          <div>
+          <div className='hidden md:flex'>
             <Image src="/images/suit.png" alt="Dante" className="" width={1000} height={1000}/>
           </div>
         {/* </div> */}

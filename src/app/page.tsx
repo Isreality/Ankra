@@ -5,6 +5,7 @@ import Cad from "../components/Cad";
 import { Icon } from '@iconify/react';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import BtnLink from "@/components/BtnLink";
 
 
 export default function Home() {
@@ -13,26 +14,28 @@ export default function Home() {
       <main>
         <Navbar/>
         {/* Hero Section */}
-        <div className="pro py-4 md:py-8 flex items-center">
+        <div className="bg-[url('/images/hero.png')] bg-center bg-cover bg-black/50 bg-blend-overlay h-100 md:h-150 py-4 flex items-center mt-0 md:mt-0 lg:mt-0">
             <div className="flex flex-col items-center md:items-center lg:items-start w-full md:w-full lg:w-[60%] px-4 md:px-20">
-                <h2 className="text-white text-center md:text-center lg:text-left font-black text-4xl md:text-6xl lg:text-7xl">
+                <h2 className="text-white text-center md:text-center lg:text-left font-black text-5xl md:text-7xl lg:text-7xl">
                    GIANT SALE
                 </h2><br/>
-                <h1 className="text-primary text-2xl md:text-4xl lg:text-5xl font-bold">70% OFF</h1><br/>
-                <div className="flex flex-row gap-5">
+                <h1 className="text-primary text-4xl md:text-4xl lg:text-5xl font-bold">70% OFF</h1><br/>
+                <div className="flex flex-col md:flex-row gap-2 md:gap-5">
                   <Link href='/shop' className="bg-primary hover:bg-black py-4 px-12 rounded-md border-fa cursor-pointer text-white text-xs md:text-base font-medium">Shop Now</Link>
                   <Link href='/contact' className="bg-transparent hover:bg-white py-4 px-12 rounded-md border-2 border-white cursor-pointer text-white hover:text-primary text-xs md:text-base font-medium">Get In Touch</Link>
-                </div>
-                
+                </div>   
             </div>
         </div>  
 
         {/* About */}
-        <div className="flex flex-col md:flex-col lg:flex-row items-center justify-between gap-10 w-full px-4 md:px-8 lg:px-24 py-16">
-          <div className="space-y-1">
-            <h1 className="text-primary text-center md:text-center lg:text-justify font-black text-2xl md:text-5xl lg:text-5xl">About Ankra</h1><br/>
+        <div className="flex flex-col md:flex-col lg:flex-row items-center justify-between gap-10 w-full px-4 md:px-8 lg:px-24 py-6 md:py-16">
+          <div className="text- center md:text-center lg:text-left space-y-0 md:space-y-1">
+            <h1 className="text-primary text-center md:text-center lg:text-justify font-black text-2xl md:text-5xl lg:text-4xl">About Ankra</h1><br/>
             <p className="text-left text-sm md:text-lg">It is an app that allows customers to find tailors in their location and book appointments with them get it delivered at their doorstep. It makes everything easy from the measurement to the delivery of the clothing.</p><br/>
-            <Link href='/shop' className="bg-primary hover:bg-black py-4 px-10 rounded-md border-fa cursor-pointer text-white text-xs md:text-base font-medium">Shop Now</Link>
+            
+            <div className="flex items-center md:items-left">
+              <Link href='/shop' className=" bg-primary hover:bg-black py-4 px-10 rounded-md border-fa cursor-pointer text-white text-xs md:text-base text-center font-medium">Shop Now</Link>
+            </div>
           </div>
 
           <div>
@@ -43,8 +46,8 @@ export default function Home() {
         </div>
 
         {/* Featured Materials */}
-        <div className="w-full px-4 md:px-8 lg:px-24 py-16">
-          <h1 className="text-[#1e1e1e] text-center md:text-center lg:text-center font-bold text-xl md:text-3xl lg:text-4xl">Featured Materials</h1><br/>
+        <div className="w-full px-4 md:px-8 lg:px-24 py-6 md:py-16">
+          <h1 className="text-[#1e1e1e] text-center md:text-center lg:text-center font-bold text-2xl md:text-3xl lg:text-4xl">Featured Materials</h1><br/>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <Cad title="Owambe" price="N15,000" image="/images/owambe.png"/>
@@ -57,7 +60,7 @@ export default function Home() {
         </div>
 
         {/* Best Ankara */}
-         <div className="w-full flex items-center px-4 md:px-8 lg:px-24 py-16">
+         <div className="w-full flex items-center px-4 md:px-8 lg:px-24 py-6 md:py-16">
             <div className="bg-[url('/images/frame.png')] bg-center bg-cover flex flex-col md:flex-col lg:flex-row gap-5 px-6 md:px-20 pb-0 md:pb-8 pt-16 md:pt-8 justify-between h-[450px] md:h-[400px] lg:h-[280px] rounded-2xl items-center">
               <div className="flex flex-col items-center md:items-center lg:items-start gap-5 lg:w-[80%]">
                 {/* <Fade direction="left" triggerOnce="true"> */}
@@ -77,8 +80,8 @@ export default function Home() {
         </div>
 
         {/* Best Selling */}
-        <div className="w-full px-4 md:px-8 lg:px-24 py-16">
-          <h1 className="text-[#1e1e1e] text-center md:text-center lg:text-center font-bold text-xl md:text-2xl lg:text-4xl">Best Selling</h1><br/>
+        <div className="w-full px-4 md:px-8 lg:px-24 py-6 md:py-16">
+          <h1 className="text-[#1e1e1e] text-center md:text-center lg:text-center font-bold text-2xl md:text-2xl lg:text-4xl">Best Selling</h1><br/>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <Cad title="Owambe" price="N15,000" image="/images/eng.png"/>
@@ -91,15 +94,15 @@ export default function Home() {
         </div>
         
         {/* Services */} 
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full px-2 md:px-8 lg:px-24 py-16">
+        <div className="flex flex-col md:flex-row gap-3 md:gap-0 justify-between items-start md:items-center w-full px-4 md:px-8 lg:px-24 py-6 md:py-16">
           <div className="flex flex-row gap-3">
             <div>
               <Icon icon="tabler:truck-delivery" width="65" height="65" className="text-primary font-medium" />
             </div>
 
             <div>
-              <h1 className="text-left text-base md:text-lg font-bold">Fast Delivery</h1>
-              <p className="text-left text-sm md:text-base">To Your Doorstep</p>
+              <h1 className="text-left text-base md:text-xl font-bold">Fast Delivery</h1>
+              <p className="text-left text-sm md:text-lg">To Your Doorstep</p>
             </div>
           </div>
 
