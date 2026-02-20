@@ -31,7 +31,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-col lg:flex-row items-center justify-between gap-10 w-full px-4 md:px-8 lg:px-24 py-6 md:py-16">
           <div className="text- center md:text-center lg:text-left space-y-0 md:space-y-1">
             <h1 className="text-primary text-center md:text-center lg:text-justify font-black text-2xl md:text-5xl lg:text-4xl">About Ankra</h1><br/>
-            <p className="text-left text-sm md:text-lg">It is an app that allows customers to find tailors in their location and book appointments with them get it delivered at their doorstep. It makes everything easy from the measurement to the delivery of the clothing.</p><br/>
+            <p className="text-left text-xs md:text-lg">It is an app that allows customers to find tailors in their location and book appointments with them get it delivered at their doorstep. It makes everything easy from the measurement to the delivery of the clothing.</p><br/>
             
             <div className="flex items-center md:items-left">
               <Link href='/shop' className=" bg-primary hover:bg-black py-4 px-10 rounded-md border-fa cursor-pointer text-white text-xs md:text-base text-center font-medium">Shop Now</Link>

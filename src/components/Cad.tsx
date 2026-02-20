@@ -25,7 +25,7 @@ export default function Cad({title, price, image}: CadProps) {
               alt=""
               width={800}
               height={800}
-              className="w-full h-100 object-cover rounded-md mb-2 hover:scale-105 overflow-hidden"
+              className="w-full h-70 md:h-100 object-top object-cover rounded-md mb-2 hover:scale-105 overflow-hidden"
             />
         </CardContent>
         <CardHeader className="px-6 pt-2 pb-4">
