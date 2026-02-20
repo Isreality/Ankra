@@ -80,7 +80,7 @@ export default function Home() {
         </div>
 
         {/* Best Selling */}
-        <div className="w-full px-4 md:px-8 lg:px-24 py-6 md:py-16">
+        <div className="w-full px-4 md:px-8 lg:px-24 py-4 md:py-16">
           <h1 className="text-[#1e1e1e] text-center md:text-center lg:text-center font-bold text-2xl md:text-2xl lg:text-4xl">Best Selling</h1><br/>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -94,10 +94,10 @@ export default function Home() {
         </div>
         
         {/* Services */} 
-        <div className="flex flex-col md:flex-row gap-3 md:gap-0 justify-between items-start md:items-center w-full px-4 md:px-8 lg:px-24 py-6 md:py-16">
-          <div className="flex flex-row gap-3">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-0 justify-between items-start md:items-center w-full px-4 md:px-8 lg:px-24 py-4 md:py-16">
+          <div className="flex flex-row items-center gap-3">
             <div>
-              <Icon icon="tabler:truck-delivery" width="65" height="65" className="text-primary font-medium" />
+              <Icon icon="tabler:truck-delivery" className="text-primary font-normal w-12 h-12 md:w-18 md:h-18" />
             </div>
 
             <div>
@@ -106,9 +106,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-row gap-3">
+          <div className="flex flex-row items-center gap-3">
             <div>
-              <Icon icon="iconamoon:headphone-light" width="60" height="60" className="text-primary font-medium" />
+              <Icon icon="iconamoon:headphone-light" className="text-primary font-medium w-10 h-10 md:w-16 md:h-16" />
             </div>
             <div>
               <h1 className="text-left text-base md:text-lg font-bold">24/7 Online Support</h1>
@@ -116,9 +116,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-row gap-3">
+          <div className="flex flex-row items-center gap-3">
             <div>
-              <Icon icon="bx:wallet" width="60" height="60" className="text-primary font-medium" />
+              <Icon icon="bx:wallet" className="text-primary font-medium w-10 h-10 md:w-16 md:h-16" />
             </div>
             <div>
               <h1 className="text-left text-base md:text-lg font-bold">Secure Payment</h1>

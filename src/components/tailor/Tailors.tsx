@@ -178,7 +178,7 @@ export default function Tailors() {
                               alt={tailor.name}
                               width={800}
                               height={800}
-                              className="w-full h-100 object-cover rounded-md mb-2 hover:scale-105 overflow-hidden"
+                              className="w-full h-80 md:h-100 object-top object-cover rounded-md mb-2 hover:scale-105 overflow-hidden"
                             />
                           </DialogTrigger>
 

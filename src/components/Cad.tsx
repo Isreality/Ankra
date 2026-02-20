@@ -25,13 +25,13 @@ export default function Cad({title, price, image}: CadProps) {
               alt=""
               width={800}
               height={800}
-              className="w-full h-70 md:h-100 object-top object-cover rounded-md mb-2 hover:scale-105 overflow-hidden"
+              className="w-full h-70 md:h-80 object-top object-cover rounded-md mb-2 hover:scale-105 overflow-hidden"
             />
         </CardContent>
         <CardHeader className="px-6 pt-2 pb-4">
             <CardDescription className="text-black font-semibold text-lg md:text-2xl lg:text-xl">{title}</CardDescription>
             <CardTitle className="text-primary font-bold text-xl md:text-3xl lg:text-2xl">{price}</CardTitle>
-            <CardAction><Icon icon="mdi:cart-variant" width="45" height="45" className="bg-primary text-white p-2 rounded-full font-medium"/></CardAction>
+            <CardAction><Icon icon="mdi:cart-variant" className="bg-primary text-white p-3 rounded-full font-medium w-12 h-12 md:w-14 md:h-14"/></CardAction>
         </CardHeader>
         
         {/* <CardFooter>
